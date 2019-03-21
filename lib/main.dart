@@ -1,34 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/category.dart';
 
-// TODO: Pass this information into your custom [Category] widget
-const _categoryName = 'Cake';
-const _categoryIcon = Icons.cake;
-const _categoryColor = Colors.green;
+void main() => runApp(MyApp());
 
-/// The function that is called when main.dart is run.
-void main() {
-  runApp(UnitConverterApp());
-}
+class MyApp extends StatelessWidget {
 
-/// This widget is the root of our application.
-/// Currently, we just show one widget in our app.
-class UnitConverterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Unit Converter',
+      title: 'Welcome to flutter',
       home: Scaffold(
-        backgroundColor: Colors.green[100],
-        body: Center(
-          // TODO: Determine what properties you'll need to pass into the widget
-          child: Category(
-              name:_categoryName,
-              color:_categoryColor,
-              iconLocation:_categoryIcon),
+        appBar: AppBar(
+          title: Text('Welcome to flutter'),
         ),
-      ),
+        body: Center(
+          child: Text('Hello world'),
+        ),
+      )
     );
   }
 }
