@@ -11,50 +11,44 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Flutter layout demo'),
           ),
-          body: Container(child: _buildStack()),
-        ));
+          body: Container(
+              color: Colors.grey[200],
+              child:Center(child: _buildCard()),
+        )));
   }
-
-  Widget _buildStack() => Stack(
+  Widget _buildCard() => SizedBox(
+    height: 210,
+    width: 300,
+    child: Card(
+      child: Column(
         children: [
-          CircleAvatar(
-            backgroundImage: AssetImage('images/lake.jpg'),
-            radius: 100,
-          ),
-          Positioned(
-            bottom: 50,
-            right: 50,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black45,
-              ),
-              child: Text(
-                'Mia B',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
+          ListTile(
+            title: Text('1625 Main Street',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+            subtitle: Text('My City, CA 99984'),
+            leading: Icon(
+              Icons.restaurant_menu,
+              color: Colors.blue[500],
             ),
           ),
-          Positioned(
-            bottom: 20,
-            right: 50,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black45,
-              ),
-              child: Text(
-                'London',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
+          Divider(),
+          ListTile(
+            title: Text('(408) 555-1212',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+            leading: Icon(
+              Icons.contact_phone,
+              color: Colors.blue[500],
             ),
-          )
+          ),
+          ListTile(
+            title: Text('costa@example.com'),
+            leading: Icon(
+              Icons.contact_mail,
+              color: Colors.blue[500],
+            ),
+          ),
         ],
-      );
+      ),
+    ),
+  );
 }
